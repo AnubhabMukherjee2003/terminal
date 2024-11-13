@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+        }
+        #screen{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: green;
+        }
+        #scan,#bezel{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        #scan{
+            opacity: 70%;
+        }
+        #content{
+            font-family: Vt323;
+            padding: 59px;
+            color: rgb(234, 234, 87);
+            font-size: 20px;
+            /* text-shadow: 1px 1px 2px  greenyellow, 0 0 1em greenyellow, 0 0 0.2em greenyellow ; */
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <img src="scanlines.png" alt="scan" id="scan">
+        <!-- <img src="bezel.png" alt="bezel" id="bezel"> -->
+        <div id="content">
+            <h1>Hello World!!</h1>
+            <p>this is an old school effect</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,21 +1,97 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Import the VT323 font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #032603;
+  --foreground: #eaea57;
+  --font-size: 20px;
+  --line-height: 1.2;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-family: 'VT323', monospace;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  /* text-shadow: 1px 1px 2px greenyellow, 0 0 1em greenyellow, 0 0 0.2em greenyellow; */
+}
+
+#screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+#scan{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#scan {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.1) 50%,
+    transparent 50%
+  );
+  background-size: 100% 2px;
+  opacity: 0.2;
+}
+
+#content {
+  position: relative;
+  padding: 30px;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  caret-color: transparent;
+  height: 100%;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  height: calc(var(--font-size) * var(--line-height));
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: calc(var(--font-size) * 0.6);
+  height: var(--font-size);
+  background-color: var(--foreground);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(calc(1ch * var(--cursor-position, 0)));
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
