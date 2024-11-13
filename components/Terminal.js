@@ -14,6 +14,7 @@ const Terminal = () => {
   ]);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const [showCursor, setShowCursor] = useState(true);
   const inputRef = useRef(null);
 
@@ -34,7 +35,20 @@ const Terminal = () => {
       if (input.trim() !== '') {
         processCommand(input.trim());
         setHistory([...history, input.trim()]);
+        setHistoryIndex(-1);
         setInput('');
+      }
+    } else if (e.key === 'ArrowUp') {
+      if (history.length > 0) {
+        const newIndex = historyIndex === -1 ? history.length - 1 : Math.max(historyIndex - 1, 0);
+        setHistoryIndex(newIndex);
+        setInput(history[newIndex]);
+      }
+    } else if (e.key === 'ArrowDown') {
+      if (history.length > 0) {
+        const newIndex = historyIndex === -1 ? -1 : Math.min(historyIndex + 1, history.length - 1);
+        setHistoryIndex(newIndex);
+        setInput(newIndex === -1 ? '' : history[newIndex]);
       }
     }
   };
@@ -49,31 +63,31 @@ const Terminal = () => {
       case 'help':
         newLines.push('Available commands:');
         newLines.push(
-          '<span class="pl-10 text-yellow-300">whois</span> - Information about Anubhab'
+          '<span class=" text-yellow-300">whois</span> - Information about Anubhab'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">skills</span> - View my technical skills'
+          '<span class="text-yellow-300">skills</span> - View my technical skills'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">projects</span> - Showcase of my projects'
+          '<span class="text-yellow-300">projects</span> - Showcase of my projects'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">experience</span> - My work experience'
+          '<span class="text-yellow-300">experience</span> - My work experience'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">social</span> - Links to my social profiles'
+          '<span class="text-yellow-300">social</span> - Links to my social profiles'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">email</span> - My contact email'
+          '<span class="text-yellow-300">email</span> - My contact email'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">resume</span> - Link to my resume'
+          '<span class="text-yellow-300">resume</span> - Link to my resume'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">history</span> - View command history'
+          '<span class="text-yellow-300">history</span> - View command history'
         );
         newLines.push(
-          '<span class="text-yellow-300 pl-10">clear</span> - Clear the terminal'
+          '<span class="text-yellow-300">clear</span> - Clear the terminal'
         );
         break;
       case 'whois':
@@ -137,7 +151,7 @@ const Terminal = () => {
       case 'history':
         newLines.push('Command History:');
         history.forEach((cmd, idx) => {
-          newLines.push(`${idx + 1}: ${cmd}`);
+          newLines.push(`${cmd}`);
         });
         break;
       case 'clear':
