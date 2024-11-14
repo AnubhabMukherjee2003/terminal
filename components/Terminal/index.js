@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import { processCommand } from './commands';
-import { WELCOME_ASCII } from './ascii';
+import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 
 const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
-    WELCOME_ASCII,
+    WELCOME_ASCII_DESKTOP,
     'Type "help" to see available commands.'
   ]);
   const [input, setInput] = useState('');
@@ -29,6 +29,29 @@ const Terminal = () => {
       contentRef.current.scrollTop = contentRef.current.scrollHeight;
     }
   }, [lines]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1100) {
+        setLines([
+          "Welcome to Anubhab's Terminal Portfolio!",
+          WELCOME_ASCII_MOBILE,
+          'Type "help" to see available commands.'
+        ]);
+      } else {
+        setLines([
+          "Welcome to Anubhab's Terminal Portfolio!",
+          WELCOME_ASCII_DESKTOP,
+          'Type "help" to see available commands.'
+        ]);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleInput = (e) => {
     if (e.key === 'Enter') {

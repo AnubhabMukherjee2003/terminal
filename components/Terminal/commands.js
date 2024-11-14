@@ -132,6 +132,9 @@ export const processCommand = (command, lines, history) => {
       newLines.push(
         `<span class="command-output text-red-500">Error:</span> command not found: ${command}`
       );
+      newLines.push(
+        `<span class="command-output">type 'help' to know available commands</span>`
+      );
       break;
   }
 

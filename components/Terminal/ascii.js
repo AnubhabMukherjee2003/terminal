@@ -1,5 +1,4 @@
-export const WELCOME_ASCII = `
-               _nnnn_                         
+export const WELCOME_ASCII_DESKTOP = `               _nnnn_                         
               dGGGGMMb     ,"""""""""""".  
              @p~qp~~qMb    | Linux Rules! | 
              M|@||@) M|   _;..............' 
@@ -16,3 +15,15 @@ export const WELCOME_ASCII = `
       \\____   )MMMMMM|   .'
            \`-'       \`--' hjm
 `;
+
+export const WELCOME_ASCII_MOBILE = `
+  ▄▄▄      
+▒████▄    
+▒██  ▀█▄  
+░██▄▄▄▄██ 
+ ▓█   ▓██▒
+ ▒▒   ▓▒█░
+  ▒   ▒▒ ░
+  ░   ▒   
+      ░  ░
+      `;
