@@ -4,15 +4,24 @@ import { useEffect, useRef, useState } from 'react';
 const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
+`█
+           _nnnn_                         
+          dGGGGMMb     ,"""""""""""".  
+         @p~qp~~qMb    | Linux Rules! | 
+         M|@||@) M|   _;..............' 
+         @,----.JM| -'                  
+        JS^\__/  qKL                       █████╗ ███╗   ██╗██╗   ██╗██████╗ ██╗  ██╗ █████╗ ██████╗
+       dZP        qKRb                   ██╔══██╗████╗  ██║██║   ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
+     dZP          qKKb                   ███████║██╔██╗ ██║██║   ██║██████╔╝███████║███████║██████╔╝
+     fZP            SMMb                 ██╔══██║██║╚██╗██║██║   ██║██╔══██╗██╔══██║██╔══██║██╔══██╗
+     HZM            MMMM                 ██║  ██║██║ ╚████║╚██████╔╝██████╔╝██║  ██║██║  ██║██████╔╝
+     FqM            MMMM                 ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
+   __| ".        |\dS"qML
+   |    \`.       | \`' \Zq
+  _)      \.___.,|     .'
+  \____   )MMMMMM|   .'
+       \`-'       \`--' hjm
 
-
-`
- █████╗ ███╗   ██╗██╗   ██╗██████╗ ██╗  ██╗ █████╗ ██████╗ 
-██╔══██╗████╗  ██║██║   ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
-███████║██╔██╗ ██║██║   ██║██████╔╝███████║███████║██████╔╝
-██╔══██║██║╚██╗██║██║   ██║██╔══██╗██╔══██║██╔══██║██╔══██╗
-██║  ██║██║ ╚████║╚██████╔╝██████╔╝██║  ██║██║  ██║██████╔╝
-╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
 `,
     'Type "help" to see available commands.'
   ]);
@@ -75,31 +84,31 @@ const Terminal = () => {
       case 'help':
         newLines.push('<span class="command-output">Available commands:</span>');
         newLines.push(
-          '<span class="command-output text-yellow-300">whois</span> - Information about Anubhab'
+          '<span class="command-output text-orange-500">whois</span> - Information about Anubhab'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">skills</span> - View my technical skills'
+          '<span class="command-output text-orange-500">skills</span> - View my technical skills'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">projects</span> - Showcase of my projects'
+          '<span class="command-output text-orange-500">projects</span> - Showcase of my projects'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">experience</span> - My work experience'
+          '<span class="command-output text-orange-500">experience</span> - My work experience'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">social</span> - Links to my social profiles'
+          '<span class="command-output text-orange-500">social</span> - Links to my social profiles'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">email</span> - My contact email'
+          '<span class="command-output text-orange-500">email</span> - My contact email'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">resume</span> - Link to my resume'
+          '<span class="command-output text-orange-500">resume</span> - Link to my resume'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">history</span> - View command history'
+          '<span class="command-output text-orange-500">history</span> - View command history'
         );
         newLines.push(
-          '<span class="command-output text-yellow-300">clear</span> - Clear the terminal'
+          '<span class="command-output text-orange-500">clear</span> - Clear the terminal'
         );
         break;
       case 'whois':
@@ -107,7 +116,7 @@ const Terminal = () => {
           '<span class="command-output">Anubhab Mukherjee is a Computer Science Engineering student at Heritage Institute of Technology.</span>'
         );
         newLines.push(
-          '<span class="command-output">He has a passion for web development, machine learning, and space research projects.</span>'
+          '<span class="command-output">He has a passion for web development, machine learning, and blockchain.</span>'
         );
         break;
       case 'skills':
@@ -117,7 +126,7 @@ const Terminal = () => {
         newLines.push('<span class="command-output">- Backend: Node.js, Express.js, Flask, Django</span>');
         newLines.push('<span class="command-output">- Database: MongoDB, MySQL, Firebase</span>');
         newLines.push('<span class="command-output">- ML/AI: TensorFlow, PyTorch, Keras, Scikit-Learn</span>');
-        newLines.push('<span class="command-output">- Tools: Git, Docker, Linux, Firebase, ESP32, Arduino</span>');
+        newLines.push('<span class="command-output">- Tools: Git, Linux, Firebase, ESP32, Arduino</span>');
         break;
       case 'projects':
         newLines.push('<span class="command-output">Some of my notable projects:</span>');
@@ -125,7 +134,7 @@ const Terminal = () => {
         newLines.push('<span class="command-output">2. Emotion-powered Chatbot (Cloudflare API, OpenCV)</span>');
         newLines.push('<span class="command-output">3. Anime Notification App (React Native)</span>');
         newLines.push(
-          '<a href="https://anubhabmukherjee2003.github.io/portfolio/" target="_blank" class="command-output text-blue-400 underline">Check my portfolio for more</a>'
+          '<a href="https://anubhabmukherjee2003.github.io/portfolio/" target="_blank" class="command-output text-orange-500 underline">Check my portfolio for more</a>'
         );
         break;
       case 'experience':
@@ -139,25 +148,25 @@ const Terminal = () => {
       case 'social':
         newLines.push('<span class="command-output">Find me online:</span>');
         newLines.push(
-          '<span class="command-output">LinkedIn: <a href="https://www.linkedin.com/in/anubhab-mukherjee-b98049284/" target="_blank" class="command-output text-blue-400 underline">LinkedIn Profile</a></span>'
+          '<span class="command-output">LinkedIn: <a href="https://www.linkedin.com/in/anubhab-mukherjee-b98049284/" target="_blank" class="command-output text-orange-500 underline">LinkedIn Profile</a></span>'
         );
         newLines.push(
-          '<span class="command-output">GitHub: <a href="https://github.com/AnubhabMukherjee2003" target="_blank" class="command-output text-blue-400 underline">GitHub Profile</a></span>'
+          '<span class="command-output">GitHub: <a href="https://github.com/AnubhabMukherjee2003" target="_blank" class="command-output text-orange-500 underline">GitHub Profile</a></span>'
         );
         newLines.push(
-          '<span class="command-output">Twitter: <a href="https://twitter.com/your_twitter_handle" target="_blank" class="command-output text-blue-400 underline">Twitter Profile</a></span>'
+          '<span class="command-output">Twitter: <a href="https://twitter.com/your_twitter_handle" target="_blank" class="command-output text-orange-500 underline">Twitter Profile</a></span>'
         );
         break;
       case 'email':
         newLines.push('<span class="command-output">Feel free to reach out:</span>');
         newLines.push(
-          '<a href="mailto:antucruse621@gmail.com" class="command-output text-blue-400 underline">antucruse621@gmail.com</a>'
+          '<a href="mailto:antucruse621@gmail.com" class="command-output text-orange-500 underline">antucruse621@gmail.com</a>'
         );
         break;
       case 'resume':
         newLines.push('<span class="command-output">You can view and download my resume here:</span>');
         newLines.push(
-          '<a href="/path/to/your/resume.pdf" target="_blank" class="command-output text-blue-400 underline">Download Resume</a>'
+          '<a href="/path/to/your/resume.pdf" target="_blank" class="command-output text-orange-500 underline">Download Resume</a>'
         );
         break;
       case 'history':
