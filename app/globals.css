@@ -11,6 +11,7 @@
   --foreground: #eaea57;
   --font-size: 16px;
   --line-height: 1.2;
+  --cursor-blink: 1s step-end infinite;
 }
 
 body {
@@ -32,16 +33,13 @@ body {
   overflow: hidden;
 }
 
-#scan{
+#scan {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-#scan {
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.1) 50%,
     transparent 50%
@@ -52,7 +50,7 @@ body {
 
 #content {
   position: relative;
-  padding: 30px;
+  padding: 30px 60px;
   z-index: 1;
   height: 100%;
   overflow-y: auto;
@@ -88,7 +86,7 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%) translateX(calc(1ch * var(--cursor-position, 0)));
-  animation: blink 1s step-end infinite;
+  animation: blink var(--cursor-blink);
 }
 
 @keyframes blink {
@@ -98,4 +96,5 @@ body {
 
 .command-output {
   padding-left: 50px; /* Adjust the padding as needed */
+  transition: padding-left 0.3s ease-in-out;
 }
