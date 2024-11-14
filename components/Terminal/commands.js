@@ -1,4 +1,5 @@
-import { WELCOME_ASCII } from './ascii';
+import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
+
 export const processCommand = (command, lines, history) => {
   let newLines = [
     ...lines,
@@ -117,8 +118,7 @@ export const processCommand = (command, lines, history) => {
       );
       break;
     case 'banner':
-      newLines.push(WELCOME_ASCII);
-      
+      newLines.push(window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP);
       break;
     case 'history':
       newLines.push('<span class="command-output">Command History:</span>');
