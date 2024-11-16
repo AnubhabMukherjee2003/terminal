@@ -79,8 +79,8 @@ body {
 
 .blinking-cursor {
   display: inline-block;
-  width: calc(var(--font-size) * 0.6);
-  height: var(--font-size);
+  width: calc(var(--font-size) * 0.7);
+  height: calc(var(--font-size) * 1.5);
   background-color: var(--foreground);
   position: absolute;
   left: 0;

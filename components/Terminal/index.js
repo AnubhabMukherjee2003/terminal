@@ -6,10 +6,11 @@ import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
-    WELCOME_ASCII_DESKTOP,
+    window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP,
     'Type "help" to see available commands.'
   ]);
   const [input, setInput] = useState('');
+  const [cursorPosition, setCursorPosition] = useState(0);
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [showCursor, setShowCursor] = useState(true);
@@ -32,19 +33,11 @@ const Terminal = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 1100) {
-        setLines([
-          "Welcome to Anubhab's Terminal Portfolio!",
-          WELCOME_ASCII_MOBILE,
-          'Type "help" to see available commands.'
-        ]);
-      } else {
-        setLines([
-          "Welcome to Anubhab's Terminal Portfolio!",
-          WELCOME_ASCII_DESKTOP,
-          'Type "help" to see available commands.'
-        ]);
-      }
+      setLines((prevLines) => {
+        const newLines = [...prevLines];
+        newLines[1] = window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP;
+        return newLines;
+      });
     };
 
     window.addEventListener('resize', handleResize);
@@ -62,19 +55,37 @@ const Terminal = () => {
         setHistory([...history, input.trim()]);
         setHistoryIndex(-1);
         setInput('');
+        setCursorPosition(0);
       }
     } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
       if (history.length > 0) {
         const newIndex = historyIndex === -1 ? history.length - 1 : Math.max(historyIndex - 1, 0);
         setHistoryIndex(newIndex);
-        setInput(history[newIndex]);
+        const newCommand = history[newIndex];
+        setInput(newCommand);
+        setCursorPosition(newCommand.length);
       }
     } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
       if (history.length > 0) {
         const newIndex = historyIndex === -1 ? -1 : Math.min(historyIndex + 1, history.length - 1);
         setHistoryIndex(newIndex);
-        setInput(newIndex === -1 ? '' : history[newIndex]);
+        const newCommand = newIndex === -1 ? '' : history[newIndex];
+        setInput(newCommand);
+        setCursorPosition(newCommand.length);
       }
+    }
+  };
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    setCursorPosition(e.target.selectionStart);
+  };
+
+  const handleCursorPosition = () => {
+    if (inputRef.current) {
+      setCursorPosition(inputRef.current.selectionStart);
     }
   };
 
@@ -96,15 +107,17 @@ const Terminal = () => {
               ref={inputRef}
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={handleChange}
               onKeyDown={handleInput}
+              onClick={handleCursorPosition}
+              onKeyUp={handleCursorPosition}
               className="terminal-input"
               autoComplete="off"
             />
             <span
               className="blinking-cursor"
               style={{
-                '--cursor-position': input.length,
+                '--cursor-position': cursorPosition,
                 opacity: showCursor ? 1 : 0
               }}
             ></span>
