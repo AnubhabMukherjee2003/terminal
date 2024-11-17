@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://anubhab-cli.me
+
+# Sitemaps
+Sitemap: https://anubhab-cli.me/sitemap.xml
