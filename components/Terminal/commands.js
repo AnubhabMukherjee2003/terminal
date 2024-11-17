@@ -114,7 +114,7 @@ export const processCommand = (command, lines, history) => {
     case 'resume':
       newLines.push('<span class="command-output">You can view and download my resume here:</span>');
       newLines.push(
-        '<a href="/path/to/your/resume.pdf" target="_blank" class="command-output text-orange-500 underline">Download Resume</a>'
+        '<a href="/resume.pdf" target="_blank" class="command-output text-orange-500 underline">Download Resume</a>'
       );
       break;
     case 'banner':
