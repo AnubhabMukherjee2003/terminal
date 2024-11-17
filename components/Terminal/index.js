@@ -6,7 +6,7 @@ import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
-    window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP,
+    '', // Placeholder for ASCII art
     'Type "help" to see available commands.'
   ]);
   const [input, setInput] = useState('');
@@ -32,16 +32,24 @@ const Terminal = () => {
   }, [lines]);
 
   useEffect(() => {
+    // This runs on the client side
+    const initialAscii = window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP;
+    setLines((prevLines) => {
+      const newLines = [...prevLines];
+      newLines[1] = initialAscii;
+      return newLines;
+    });
+
     const handleResize = () => {
+      const updatedAscii = window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP;
       setLines((prevLines) => {
         const newLines = [...prevLines];
-        newLines[1] = window.innerWidth <= 1100 ? WELCOME_ASCII_MOBILE : WELCOME_ASCII_DESKTOP;
+        newLines[1] = updatedAscii;
         return newLines;
       });
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Call once to set initial state
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -75,6 +83,11 @@ const Terminal = () => {
         setInput(newCommand);
         setCursorPosition(newCommand.length);
       }
+    } else {
+      // Update cursor position
+      setTimeout(() => {
+        setCursorPosition(e.target.selectionStart);
+      }, 0);
     }
   };
 
