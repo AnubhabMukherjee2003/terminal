@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { processCommand } from './commands';
 import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 
@@ -104,7 +105,7 @@ const Terminal = () => {
 
   return (
     <div id="screen" onClick={() => inputRef.current.focus()}>
-      <img src="/scanlines.png" alt="scan" id="scan" />
+      <Image src="/scanlines.png" alt="scan" id="scan" layout="fill" />
       <div id="content" ref={contentRef}>
         {lines.map((line, index) => (
           <p
