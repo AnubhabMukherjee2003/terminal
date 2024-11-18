@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <meta name="description" content="Terminal portfolio of Anubhab Mukherjee showcasing skills, projects, and experience." />
-        <meta name="keywords" content="Anubhab Mukherjee, Terminal Portfolio, CLI Portfolio, Web Development, Machine Learning, Projects, Experience" />
+        <meta name="keywords" content="Anubhab Mukherjee,Anubhab Mukherjee Terminal,Anubhav Mukherjee Terminal, Terminal Portfolio, CLI Portfolio, Web Development, Machine Learning, Projects, Experience" />
         <meta name="author" content="Anubhab Mukherjee" />
         <meta property="og:title" content="Anubhab Mukherjee - Terminal Portfolio" />
         <meta property="og:description" content="Terminal portfolio of Anubhab Mukherjee showcasing skills, projects, and experience." />
@@ -44,6 +44,24 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "name": "Anubhab Mukherjee - Terminal Portfolio",
+              "jobTitle": "Computer Science Engineering Student",
+              "url": "https://anubhab-cli.me",
+              "sameAs": [
+                "https://www.linkedin.com/in/anubhab-mukherjee-b98049284/",
+                "https://github.com/anubhabmukherjee2003"
+              ],
+              "description": "Anubhab Mukherjee specializes in web development, machine learning, and blockchain, with projects that showcase his innovation and technical skills.",
+              "logo": "https://anubhab-cli.me/logo.png", // Replace with the correct URL to your logo
+            }),
+          }}
+        />
       </body>
     </html>
   );
