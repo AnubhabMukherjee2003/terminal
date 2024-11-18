@@ -6,7 +6,7 @@ import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
-    '', // Placeholder for ASCII art
+    `${WELCOME_ASCII_MOBILE}`, // Placeholder for ASCII art
     'Type "help" to see available commands.'
   ]);
   const [input, setInput] = useState('');
