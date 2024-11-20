@@ -8,7 +8,7 @@ export default function NotFound() {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: '24rem', // Equivalent to 'h-96' in Tailwind CSS
+    height: '24rem',
   };
 
   return (

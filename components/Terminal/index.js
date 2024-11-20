@@ -131,7 +131,7 @@ const Terminal = () => {
             <span
               className="blinking-cursor"
               style={{
-                '--cursor-position': cursorPosition,
+                left: `${cursorPosition}ch`,
                 opacity: showCursor ? 1 : 0
               }}
             ></span>
