@@ -3,41 +3,41 @@ import { WELCOME_ASCII_DESKTOP, WELCOME_ASCII_MOBILE } from './ascii';
 export const processCommand = (command, lines, history) => {
   let newLines = [
     ...lines,
-    `<span class="text-green-400">visitor@anubhab:~$ ${command}</span>`,
+    `<span class="prompt">visitor@anubhab:~$ ${command}</span>`,
   ];
 
   switch (command.toLowerCase()) {
     case 'help':
-      newLines.push('<span class="command-output">Available commands:</span>');
+      newLines.push('<span class="command-output helpp">Available commands:</span>');
       newLines.push(
-        '<span class="command-output text-orange-500">whoami</span> - Information about Anubhab'
+        '<span class="command-output helpp">whoami</span> - Information about Anubhab'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">skills</span> - View my technical skills'
+        '<span class="command-output helpp">skills</span> - View my technical skills'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">projects</span> - Showcase of my projects'
+        '<span class="command-output helpp">projects</span> - Showcase of my projects'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">experience</span> - My work experience'
+        '<span class="command-output helpp">experience</span> - My work experience'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">social</span> - Links to my social profiles'
+        '<span class="command-output helpp">social</span> - Links to my social profiles'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">email</span> - My contact email'
+        '<span class="command-output helpp">email</span> - My contact email'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">resume</span> - See my cv'
+        '<span class="command-output helpp">resume</span> - See my cv'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">banner</span> - See my banner'
+        '<span class="command-output helpp">banner</span> - See my banner'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">history</span> - View command history'
+        '<span class="command-output helpp">history</span> - View command history'
       );
       newLines.push(
-        '<span class="command-output text-orange-500">clear</span> - Clear the terminal'
+        '<span class="command-output helpp">clear</span> - Clear the terminal'
       );
       break;
     case 'whoami':
@@ -66,6 +66,9 @@ export const processCommand = (command, lines, history) => {
       newLines.push('<span class="command-output">- Database: MongoDB, MySQL, Firebase</span>');
       newLines.push('<span class="command-output">- ML/AI: TensorFlow, PyTorch, Keras, Scikit-Learn</span>');
       newLines.push('<span class="command-output">- Tools: Git, Linux, Firebase, ESP32, Arduino</span>');
+      newLines.push('<span class="command-output"></span>');
+      newLines.push('<span class="command-output"></span>');
+      newLines.push('<span class="command-output">And, I Use ARCH btw</span>');
       break;
     case 'projects':
       newLines.push('<span class="command-output">Some of my notable projects:</span>');

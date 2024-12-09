@@ -7,8 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
-  --background: #064106;
-  --foreground: #eaea57;
+  --background: #1f242d;
+  --foreground:  #02f0f0;
+  --prompt: #006eff;
+  --help: #a200ff;
   --font-size: 16px;
   --line-height: 1.2;
   --cursor-blink: 1s step-end infinite;
@@ -77,7 +79,12 @@ body {
   align-items: center;
   height: calc(var(--font-size) * var(--line-height));
 }
-
+.prompt{
+  color: var(--prompt);
+}
+.helpp{
+  color: var(--help);
+}
 .blinking-cursor {
   display: inline-block;
   width: calc(var(--font-size) * 0.6);

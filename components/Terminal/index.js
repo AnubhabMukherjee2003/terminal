@@ -115,7 +115,7 @@ const Terminal = () => {
           />
         ))}
         <div className="terminal-line">
-          <span className="pr-2 text-green-400">visitor@anubhab:~$</span>
+          <span className="pr-2 prompt">visitor@anubhab:~$</span>
           <div className="flex-1 relative flex items-center">
             <input
               ref={inputRef}
