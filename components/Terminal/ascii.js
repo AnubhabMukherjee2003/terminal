@@ -13,7 +13,7 @@ export const WELCOME_ASCII_DESKTOP = `               _nnnn_
        |    \`.       | \`' \\Zq
       _)      \\.___.,|     .'
       \\____   )MMMMMM|   .'
-           \`-'       \`--' hjm
+           \`-'       \`--' IuseARCHbtw
 `;
 
 export const WELCOME_ASCII_MOBILE = `              _nnnn_                         
@@ -31,5 +31,5 @@ export const WELCOME_ASCII_MOBILE = `              _nnnn_
       |    \`.       | \`' \\Zq
      _)      \\.___.,|     .'
      \\____   )MMMMMM|   .'
-          \`-'       \`--' hjm
+          \`-'       \`--' IuseARCHbtw
 `;

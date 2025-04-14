@@ -8,7 +8,9 @@ const Terminal = () => {
   const [lines, setLines] = useState([
     "Welcome to Anubhab's Terminal Portfolio!",
     `${WELCOME_ASCII_MOBILE}`, // Placeholder for ASCII art
-    'Type "help" to see available commands.'
+    'Type "help" to see available commands.',
+    ' ',
+    'Having Trouble in Terminal? <a href="https://anubhabmukherjee2003.github.io/portfolio/" target="_blank" class=" text-orange-500 underline">Check my GUI Portfolio</a>'
   ]);
   const [input, setInput] = useState('');
   const [cursorPosition, setCursorPosition] = useState(0);
