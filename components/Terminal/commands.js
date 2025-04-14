@@ -145,7 +145,7 @@ export const processCommand = (command, lines, history) => {
       
 
     case "social":
-      newLines.push('<span class="command-output">Find me online:</span>');
+      newLines.push('<span class="command-output helpp">Find me online:</span>');
       newLines.push(
         '<span class="command-output">LinkedIn: <a href="https://www.linkedin.com/in/anubhab-mukherjee-b98049284/" target="_blank" class="command-output text-orange-500 underline">LinkedIn Profile</a></span>'
       );
