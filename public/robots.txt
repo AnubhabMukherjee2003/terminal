@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://anubhab-cli.me
+Host: https://anubhabmukherjee-terminal.vercel.app/
 
 # Sitemaps
-Sitemap: https://anubhab-cli.me/sitemap.xml
+Sitemap: https://anubhabmukherjee-terminal.vercel.app/sitemap.xml

@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <meta name="description" content="Terminal portfolio of Anubhab Mukherjee showcasing skills, projects, and experience." />
-        <meta name="keywords" content="Anubhab Mukherjee,Anubhab Mukherjee Terminal,Anubhav Mukherjee Terminal, Terminal Portfolio, CLI Portfolio, Web Development, Machine Learning, Projects, Experience" />
+        <meta name="keywords" content="Anubhab Mukherjee , Anubhav Mukherjee , Anubhab Mukherjee Terminal , Anubhav Mukherjee Terminal , Terminal Portfolio , developer portolio , CLI Portfolio,  Web Development , Machine Learning , Projects , Experience" />
         <meta name="author" content="Anubhab Mukherjee" />
         <meta property="og:title" content="Anubhab Mukherjee - Terminal Portfolio" />
         <meta property="og:description" content="Terminal portfolio of Anubhab Mukherjee showcasing skills, projects, and experience." />
